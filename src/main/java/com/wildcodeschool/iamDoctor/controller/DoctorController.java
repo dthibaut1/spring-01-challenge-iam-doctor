@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DoctorController {
 
-    @GetMapping("/doctor/{value}")
+    @GetMapping("/doctor/{id}")
     @ResponseBody
-    public String doctor(@PathVariable String value){
-        if (value.equals("1")) {
+    public String doctor(@PathVariable String id){
+        if (id.equals("1")) {
             return "William Hartnell";
-        } else if (value.equals("10")) {
+        } else if (id.equals("10")) {
             return "David Tennant";
-        } else if (value.equals("13")) {
+        } else if (id.equals("13")) {
             return "Jodie Whittaker";
         } else {
-            return "URL inconnue";
+            return "Unknown Doctor";
         }
     }
 }
